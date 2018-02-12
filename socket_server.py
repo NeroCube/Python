@@ -13,11 +13,9 @@ print 'wait for connection...'
 while True:
     conn, addr = s.accept()
     print 'Connected by ', addr
-
-    while True:
-        data = conn.recv(1024)
-        print data
-
-        conn.send("server received you message.")
-
+    
+    data = conn.recv(1024)
+    print data
+    
+    conn.send("server received you message.")
 # conn.close()
