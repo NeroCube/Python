@@ -14,8 +14,10 @@ while True:
     conn, addr = s.accept()
     print 'Connected by ', addr
     
-    data = conn.recv(1024)
-    print data
+    # Use 'while True:' loop to receive data to avoid overbuffer data loss
+    while True:
+        data = conn.recv(1024)
+        if data == ':q': break
     
-    conn.send("server received you message.")
+        conn.send("server received you message.")
 # conn.close()
