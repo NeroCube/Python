@@ -1,5 +1,4 @@
-count_fifty = int(input())
-count_ten = int(input())
-count_five = int(input())
-count_one = int(input())
-print (count_fifty * 50) + (count_ten * 10) + (count_five * 5) + (count_one * 1)
+result = [50, 10, 5, 1]
+for i in range(4):
+    result[i] = int(input()) * result[i]
+print sum(result)
