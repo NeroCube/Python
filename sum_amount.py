@@ -1,4 +1,4 @@
 result = [50, 10, 5, 1]
-for i in range(4):
-    result[i] = int(input()) * result[i]
+for i,v in enumerate(result):
+    result[i] = int(input()) * v
 print sum(result)
