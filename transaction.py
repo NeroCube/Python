@@ -5,7 +5,7 @@ try:
 except Exception as e:
     print 'input value is not integer type'
 else:	
-    if account_a - amount >= 0:
+    if (account_a - amount) >= 0:
         account_a -= amount
         account_b += amount
     else:

@@ -7,7 +7,7 @@ try:
 except Exception as e:
     print 'input value is not integer type'
 else:
-    if deposit - cost < 0:
+    if (deposit - cost) < 0:
         print 'cost need between 1 ~ 999'
     else:
         deposit -= cost
