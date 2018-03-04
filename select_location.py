@@ -64,7 +64,7 @@ else:
 		
 		for update_town in town_list:
 			# Keep in update_town covered but not in max_cover_town,
-			update_town['cover_town_list'] = filter(lambda x: x not in max_cover_town['cover_town_list'], update_town['cover_town_list'])
+			update_town['cover_town_list'] = list(set(update_town['cover_town_list']) - set(max_cover_town['cover_town_list']))
 			update_town['cover_person'] = 0
 
 			for town_order in update_town['cover_town_list']:
