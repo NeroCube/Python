@@ -36,24 +36,19 @@ except Exception as e:
 	print e
 else:
 	for purchase_num in range(demand + 1):
-		# the probability of 0 ~ (demand-1)
 		sell_probability = 0.0
 		benefit = 0
-		
-		if purchase_num == 0:
-			benefit = 0
-		else:
-			for sell_num in range(purchase_num):
+
+		for sell_num in range(purchase_num):
 				sell_probability += probabilitys[sell_num]
 				benefit += sell_num * retail_price * probabilitys[sell_num]
 				benefit += (purchase_num - sell_num) * remaining_value * probabilitys[sell_num]
 			
-			benefit += purchase_num * retail_price * (1 - sell_probability)
-			benefit -= purchase_num * purchase_costs 
-		
+		benefit += purchase_num * retail_price * (1 - sell_probability)
+		benefit -= purchase_num * purchase_costs
+
 		if benefit > result['max_benefit']:
 			result['max_benefit'] = benefit
 			result['optimize_amount'] = purchase_num
 
 	print result['optimize_amount'], int(result['max_benefit'])
-
